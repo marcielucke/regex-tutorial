@@ -21,34 +21,31 @@ As a generalized rule, your regex code should be encapsulated between two forwar
 - [Quantifiers](#quantifiers)
 - [OR Operator](#or-operator)
 - [Character Classes](#character-classes)
-- [Flags](#flags)
 - [Grouping and Capturing](#grouping-and-capturing)
 - [Bracket Expressions](#bracket-expressions)
 - [Greedy and Lazy Match](#greedy-and-lazy-match)
-- [Boundaries](#boundaries)
-- [Back-references](#back-references)
-- [Look-ahead and Look-behind](#look-ahead-and-look-behind)
+
 
 ### Regex Components
 
 Regex will use a variety of formulas to indicate what it is looking for.
 
-[] anything inside the brackets represents a range. For example [abc] tells the regex to find strings that include a, b, or c. [a-z] will tell the code to look for any letter between a-z that is lowercased.
+==[]== anything inside the brackets represents a range. For example [abc] tells the regex to find strings that include a, b, or c. [a-z] will tell the code to look for any letter between a-z that is lowercased.
 
-{} anything inside the curly bracelets represents limits for the regex match, such as maximum or minimum length.
+=={}== anything inside the curly bracelets represents limits for the regex match, such as maximum or minimum length.
 
-() anything inside parenthesis will look for an exact match according to the order the characters are shown. It can also break up our regex formula into subexpressions by grouping sections together. 
+==()== anything inside parenthesis will look for an exact match according to the order the characters are shown. It can also break up our regex formula into subexpressions by grouping sections together. 
 
-\ a backslash will escape a character that would otherwise be taken literally. For example [\.] tells the code to match a period, rather than a universal quantifier, which we will discuss below. 
+==\== a backslash will escape a character that would otherwise be taken literally. For example [\.] tells the code to match a period, rather than a universal quantifier, which we will discuss below. 
 
 
 ### Anchors
 
-The code will often begin and end with an anchor. In our example, the anchors used are ^ and $.
+The code will often begin and end with an anchor. In our example, the anchors used are ==^== and ==$==.
 
-The ^ signifies that the string we are looking for begins with whatever follows.
+The ==^== signifies that the string we are looking for begins with whatever follows.
 
-The $ signfies that the string we are looking for ends with the characters that precede it. 
+The ==$== signfies that the string we are looking for ends with the characters that precede it. 
 
 ### Quantifiers
 
@@ -62,7 +59,7 @@ Generalized
     2. The addition sign (+) tells the regex to gather the preceding character one or more times.
     2. The question mark (?) tells the regex to gather the preceding character zero or one time.
 
-    `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
+`/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
 
 We see the + sign used in our first and second segments of code. It follows our brackets, and this indicates that we need at least one or more characters to be present to match the search.
 
@@ -96,7 +93,7 @@ Capitalizing the letter will find the inverse of the desired method.
 
     We see this used used multiple times in our regex formula. 
 
-     `/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/`
+     /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 
 The first instance where this is used is the \d in our second segment. This tells the regex to look for any digit in the string. 
 
@@ -107,13 +104,13 @@ Notice that the \. is not considered a class in the first segment of code. This 
 As mentioned earlier, we can break up our regex into subexpressions using parenthesis. We see this done three times in our code. First we will break down our desired action into 3 parts
 
     1. Email Name
-    `([a-z0-9_\.-]+)` 
+    ([a-z0-9_\.-]+)
 
     2. Domain
-    `([\da-z\.-]+)`
+    ([\da-z\.-]+)
 
     3. Extension
-    `([a-z\.]{2,6})`
+    ([a-z\.]{2,6})
 
 Between these groups we see the literal characters @ and \. (a regular period), these tell the regex to look for exactly those characters between our other specified instructions. 
 
@@ -124,7 +121,7 @@ The brackets once again represent a range of characters to look for. Let's explo
 
 
     1. Email Name
-    `([a-z0-9_\.-]+)` 
+    ([a-z0-9_\.-]+) 
         - The first portion says a-z, meaning it's searching for any lowercased letter. 
         - The second portion says 0-9, this searches for any number within that range.
         - The _ and - indicate that these are both valid characters to search for.
@@ -132,14 +129,14 @@ The brackets once again represent a range of characters to look for. Let's explo
         - Finally, the + outside the bracket implies that there must be at least one character for this to be a valid search. 
 
     2. Domain
-    `([\da-z\.-]+)`
+    ([\da-z\.-]+)
         - The first portion \d indicates that it is looking for any digit. This is similar to 0-9.
         - The second portion is the same as above, a-z, searching for any lower cased letter.
         - Next we have the two special characters that are matches, . and -
         - Similar to above, + implies that there must be at least one character for this to be a valid search. 
 
     3. Extension
-    `([a-z\.]{2,6})`
+    ([a-z\.]{2,6})
         - The first portion a-z searches for any lower cased number.
         - The second portion that . will be a match.
         - Lastly, we have an expression within {}. This signifies that the final block can only have from 2 to 6 characters. 
