@@ -1,10 +1,10 @@
-# Regex explained: Matching an Email
+# Regex explained: Matching an Email 💻 ✅
 
 When searching through code there may be times a user wants to specify a certain combinations of characters for the engine to search for. While we can perform this in generalized functions and loops, it may be more convenient to use Regex logic to gather the information needed. Regex is a tool that uses a organization of characters to find certain patterns within a string. It can also be used to validate certain inputs. In this tutorial, we will explore how to use a Regex feature to search for an email.
 
 
 
-## Summary
+## Summary 
 
 The Regex below will find any emails within your specified code.
 
