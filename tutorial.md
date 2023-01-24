@@ -30,22 +30,22 @@ As a generalized rule, your regex code should be encapsulated between two forwar
 
 Regex will use a variety of formulas to indicate what it is looking for.
 
-==[]== anything inside the brackets represents a range. For example [abc] tells the regex to find strings that include a, b, or c. [a-z] will tell the code to look for any letter between a-z that is lowercased.
+[] anything inside the brackets represents a range. For example [abc] tells the regex to find strings that include a, b, or c. [a-z] will tell the code to look for any letter between a-z that is lowercased.
 
-=={}== anything inside the curly bracelets represents limits for the regex match, such as maximum or minimum length.
+{} anything inside the curly bracelets represents limits for the regex match, such as maximum or minimum length.
 
-==()== anything inside parenthesis will look for an exact match according to the order the characters are shown. It can also break up our regex formula into subexpressions by grouping sections together. 
+() anything inside parenthesis will look for an exact match according to the order the characters are shown. It can also break up our regex formula into subexpressions by grouping sections together. 
 
-==\== a backslash will escape a character that would otherwise be taken literally. For example [\.] tells the code to match a period, rather than a universal quantifier, which we will discuss below. 
+\ a backslash will escape a character that would otherwise be taken literally. For example [\.] tells the code to match a period, rather than a universal quantifier, which we will discuss below. 
 
 
 ### Anchors
 
-The code will often begin and end with an anchor. In our example, the anchors used are ==^== and ==$==.
+The code will often begin and end with an anchor. In our example, the anchors used are ^ and $.
 
-The ==^== signifies that the string we are looking for begins with whatever follows.
+The ^ signifies that the string we are looking for begins with whatever follows.
 
-The ==$== signfies that the string we are looking for ends with the characters that precede it. 
+The $ signfies that the string we are looking for ends with the characters that precede it. 
 
 ### Quantifiers
 
